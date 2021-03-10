@@ -24,7 +24,7 @@ const nohun = {
 console.log(nohun.age);
 console.log("hi");
 //console.log(nohun, console);
-
+//tt
 
 function sayHi(ya) {
   // ya는 함수의 인자로 변수명이라 생각하면 됨 potato도 됨 hamberger도 되고
