@@ -6,7 +6,7 @@
 Argument or parameter : 인자
 
 함수는 인자를 받아
-
+ddd
 인자는 변수같은 거야
 우리가 주는 값을 저장해
 
