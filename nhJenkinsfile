@@ -1,5 +1,14 @@
 pipeline {
     agent any
+
+    stages {
+        stage('git clone') {
+            steps {
+		sh 'rm -rf color-web && git clone https://github.com/mnh4140/WEB1.git'
+            }
+        }
+    }
+}
  
     stages {
         stage('harbor login') {
