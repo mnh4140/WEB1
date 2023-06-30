@@ -1,10 +1,19 @@
 pipeline {
     agent any
+ 
+    stages {
+        stage('harbor login') {
+            steps {
+                sh 'sudo podman login 52.79.48.121:30002 --username admin --password Harbor12345'
+            }
+        }
+    }
+}
 
     stages {
         stage('build') {
             steps {
-                sudo podman build --tag 52.79.48.121:30002/nh-project/nhimage:test .
+                sh 'sudo podman build --tag 52.79.48.121:30002/nh-project/nhimage:test .'
             }
         }
     }
@@ -13,7 +22,7 @@ pipeline {
     stages {
         stage('harbor push') {
             steps {
-		sudo podman push 52.79.48.121:30002/nh-project/nhimage
+		sh 'sudo podman push 52.79.48.121:30002/nh-project/nhimage'
             }
         }
     }
