@@ -2,9 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('NH-Hello') {
+        stage('build') {
             steps {
-                echo 'NH Hello World'
+                sudo podman build --tag 52.79.48.121:30002/nh-project/nhimage:test .
+            }
+        }
+    }
+}
+
+    stages {
+        stage('harbor push') {
+            steps {
+		sudo podman push 52.79.48.121:30002/nh-project/nhimage
             }
         }
     }
